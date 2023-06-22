@@ -84,7 +84,7 @@ var cfg = {
 
 var randomResponse = function() {
     fen = game.fen()
-    $.get("http://127.0.0.1:5000/move/" + fen, function(data) {
+    $.get("https://intellichess.onrender.com//move/" + fen, function(data) {
         game.move(data, {sloppy: true});
         // board.position(game.fen());
         updateStatus();
@@ -95,7 +95,7 @@ var getResponseMove = function() {
     var e = document.getElementById("sel1");
     var depth = e.options[e.selectedIndex].value;
     fen = game.fen()
-    $.get("http://127.0.0.1:5000/move/" + depth + "/" + fen, function(data) {
+    $.get("https://intellichess.onrender.com/move/" + depth + "/" + fen, function(data) {
         game.move(data, {sloppy: true});
         updateStatus();
         // This is terrible and I should feel bad. Find some way to fix this properly.
