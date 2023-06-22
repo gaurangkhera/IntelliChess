@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}
+    Play
+{% endblock title %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/chessboard-1.0.0.css')}}">
+<div class="grid grid-cols-2 p-8">
+    <div class="col-xs-12 col-sm-6">
+        <div id="mainWindow">
+            <div id="piecesB"></div>
+            <div id="board" class="h-[600px] w-[600px]"></div>
+            <div id="piecesW"></div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+        <div id="secondWindow">
+            <h3><span id="status" class="text-xl font-semibold">White to move</span></h3>
+            <div id="moveTable">
+                <table class="table table-striped table-condensed" id="pgn">
+                    <thead>
+                    </thead>
+                </table>
+            </div>
+            <div id="controls" class="mt-16">
+                <form class="form-inline">
+                    <button type="button" class="inline-flex items-center justify-center w-full px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-gray-900 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900" id="backBtn" onclick="takeBack()";>Take Back</button>
+                    <button onclick="newGame()"
+                    class="inline-flex items-center justify-center w-full px-6 py-3 mt-4 text-lg font-bold text-gray-900 transition-all duration-200 border-2 border-gray-400 sm:w-auto sm:mt-0 rounded-xl font-pj focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 hover:bg-gray-900 focus:bg-gray-900 hover:text-white focus:text-white hover:border-gray-900 focus:border-gray-900"
+                    role="button"
+                >
+                    
+                    New Game
+                </button>
+                    <select id="sel1" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 mt-4 pring-inset ring-gray-300 hover:bg-gray-50">
+                        <option value="5">Level: Advanced</option>
+                        <option value="2.5">Level: Intermediate</option>
+                        <option value="1">Level: Beginner</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="{{url_for('static', filename='js/chessboard-1.0.0.js')}}"></script>
+<script src="{{url_for('static', filename='scripts.js')}}" ></script>
+{% endblock content %}

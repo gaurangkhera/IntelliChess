@@ -1,0 +1,374 @@
+{% extends 'base.html' %}
+{% block title %}
+    Learn to play
+{% endblock title %}
+{% block content %}
+<section class="py-12 bg-white sm:py-16 lg:py-20">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl xl:text-5xl font-pj">The Board.</h2>
+        </div>
+
+        <div class="grid max-w-6xl grid-cols-1 px-20 mx-auto mt-12 text-center sm:px-0 sm:grid-cols-2 md:mt-20 gap-x-8 md:grid-cols-6 gap-y-12 lg:gap-x-16 xl:gap-x-20">
+            <div>
+                <img class="object-cover mx-auto rounded-full grayscale filter border border-1 p-2 border-gray-300" src="{{url_for('static', filename='img/chesspieces/wikipedia/bR.png')}}" alt="" />
+                <p class="mt-5 text-lg font-bold text-gray-900 sm:text-xl sm:mt-8 font-pj">The Rook</p>
+                <p class="mt-2 text-base font-normal text-gray-600 font-pj">Moves in straight lines.</p>
+            </div>
+            <div>
+                <img class="object-cover mx-auto rounded-full grayscale filter border border-1 p-2 border-gray-300" src="{{url_for('static', filename='img/chesspieces/wikipedia/bB.png')}}" alt="" />
+                <p class="mt-5 text-lg font-bold text-gray-900 sm:text-xl sm:mt-8 font-pj">The Bishop</p>
+                <p class="mt-2 text-base font-normal text-gray-600 font-pj">Moves diagonally.</p>
+            </div>
+            <div>
+                <img class="object-cover mx-auto rounded-full grayscale filter border border-1 p-2 border-gray-300" src="{{url_for('static', filename='img/chesspieces/wikipedia/bK.png')}}" alt="" />
+                <p class="mt-5 text-lg font-bold text-gray-900 sm:text-xl sm:mt-8 font-pj">The King</p>
+                <p class="mt-2 text-base font-normal text-gray-600 font-pj">The most important piece.</p>
+            </div>
+            <div>
+                <img class="object-cover mx-auto rounded-full grayscale filter border border-1 p-2 border-gray-300" src="{{url_for('static', filename='img/chesspieces/wikipedia/bQ.png')}}" alt="" />
+                <p class="mt-5 text-lg font-bold text-gray-900 sm:text-xl sm:mt-8 font-pj">The Queen</p>
+                <p class="mt-2 text-base font-normal text-gray-600 font-pj">Moves in any direction.</p>
+            </div>
+            <div>
+                <img class="object-cover mx-auto rounded-full grayscale filter border border-1 p-2 border-gray-300" src="{{url_for('static', filename='img/chesspieces/wikipedia/bN.png')}}" alt="" />
+                <p class="mt-5 text-lg font-bold text-gray-900 sm:text-xl sm:mt-8 font-pj">The Knight</p>
+                <p class="mt-2 text-base font-normal text-gray-600 font-pj">Moves in an 'L shape'.</p>
+            </div>
+            <div>
+                <img class="object-cover mx-auto rounded-full grayscale filter border border-1 p-2 border-gray-300" src="{{url_for('static', filename='img/chesspieces/wikipedia/bP.png')}}" alt="" />
+                <p class="mt-5 text-lg font-bold text-gray-900 sm:text-xl sm:mt-8 font-pj">The Pawn</p>
+                <p class="mt-2 text-base font-normal text-gray-600 font-pj">Moves forward.</p>
+            </div>
+        </div>
+
+        <div class="mt-12 sm:mt-16">
+            <svg class="w-auto h-4 mx-auto text-gray-300" viewBox="0 0 172 16" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 11 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 46 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 81 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 116 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 151 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 18 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 53 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 88 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 123 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 158 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 25 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 60 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 95 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 130 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 165 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 32 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 67 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 102 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 137 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 172 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 39 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 74 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 109 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 144 1)" />
+            </svg>
+        </div>
+        <section class="py-10 bg-white sm:py-16 lg:py-24">
+            <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div class="max-w-2xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">How to think.</h2>
+                    <p class="max-w-lg mx-auto mt-4 text-base leading-relaxed text-gray-600">Chess is an abstract strategy game that involves no hidden information and no elements of chance. You must think carefully before every move.</p>
+                </div>
+        
+                <div class="relative mt-12 lg:mt-20">
+                    <div class="absolute inset-x-0 hidden xl:px-44 top-2 md:block md:px-20 lg:px-28">
+                        <img class="w-full" src="https://cdn.rareblocks.xyz/collection/celebration/images/steps/2/curved-dotted-line.svg" alt="" />
+                    </div>
+        
+                    <div class="relative grid grid-cols-1 text-center gap-y-12 md:grid-cols-3 gap-x-12">
+                        <div>
+                            <div class="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
+                                <span class="text-xl font-semibold text-gray-700"> 1 </span>
+                            </div>
+                            <h3 class="mt-6 text-xl font-semibold leading-tight text-black md:mt-10">Capture.</h3>
+                            <p class="mt-4 text-base text-gray-600">Make sure to take out as many enemy pieces as possible, without taking huge risks.</p>
+                        </div>
+        
+                        <div>
+                            <div class="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
+                                <span class="text-xl font-semibold text-gray-700"> 2 </span>
+                            </div>
+                            <h3 class="mt-6 text-xl font-semibold leading-tight text-black md:mt-10">Protect.</h3>
+                            <p class="mt-4 text-base text-gray-600">Make sure your important pieces such as the Queen, the King, the Bishop, the Knight and the Rook are protected.</p>
+                        </div>
+        
+                        <div>
+                            <div class="flex items-center justify-center w-16 h-16 mx-auto bg-white border-2 border-gray-200 rounded-full shadow">
+                                <span class="text-xl font-semibold text-gray-700"> 3 </span>
+                            </div>
+                            <h3 class="mt-6 text-xl font-semibold leading-tight text-black md:mt-10">Have fun.</h3>
+                            <p class="mt-4 text-base text-gray-600">The most important thing in every game, is to have fun. It is important to not get burnt out of playing chess.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+        <div class="mt-12 sm:mt-16">
+            <svg class="w-auto h-4 mx-auto text-gray-300" viewBox="0 0 172 16" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 11 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 46 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 81 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 116 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 151 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 18 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 53 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 88 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 123 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 158 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 25 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 60 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 95 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 130 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 165 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 32 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 67 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 102 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 137 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 172 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 39 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 74 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 109 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 144 1)" />
+            </svg>
+        </div>
+        <section class="py-10 bg-white sm:py-16 lg:py-24">
+            <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl text-center">Basic chess openings.</h2>
+        <p class="max-w-lg mx-auto text-center mt-4 text-base leading-relaxed text-gray-600">These are a few basic, but useful and important chess openings you can use in your games to have an edge over your opponent.</p>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 mt-16 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <li class="bg-white p-4 rounded-lg shadow">
+              <h2 class="text-xl font-bold mb-2">Italian Game</h2>
+              <p class="text-gray-700">1. e4 e5</p>
+              <p class="text-gray-700">2. Nf3 Nc6</p>
+              <p class="text-gray-700">3. Bc4</p>
+            </li>
+      
+            <li class="bg-white p-4 rounded-lg shadow">
+              <h2 class="text-xl font-bold mb-2">Sicilian Defense</h2>
+              <p class="text-gray-700">1. e4 c5</p>
+            </li>
+      
+            <li class="bg-white p-4 rounded-lg shadow">
+              <h2 class="text-xl font-bold mb-2">French Defense</h2>
+              <p class="text-gray-700">1. e4 e6</p>
+            </li>
+      
+            <li class="bg-white p-4 rounded-lg shadow">
+              <h2 class="text-xl font-bold mb-2">Caro-Kann Defense</h2>
+              <p class="text-gray-700">1. e4 c6</p>
+            </li>
+      
+            <li class="bg-white p-4 rounded-lg shadow">
+              <h2 class="text-xl font-bold mb-2">King's Gambit</h2>
+              <p class="text-gray-700">1. e4 e5</p>
+              <p class="text-gray-700">2. f4</p>
+            </li>
+      
+            <li class="bg-white p-4 rounded-lg shadow">
+              <h2 class="text-xl font-bold mb-2">Queen's Gambit</h2>
+              <p class="text-gray-700">1. d4 d5</p>
+              <p class="text-gray-700">2. c4</p>
+            </li>
+      
+            <li class="bg-white p-4 rounded-lg shadow">
+              <h2 class="text-xl font-bold mb-2">King's Indian Defense</h2>
+              <p class="text-gray-700">1. d4 Nf6</p>
+              <p class="text-gray-700">2. c4 g6</p>
+            </li>
+      
+            <li class="bg-white p-4 rounded-lg shadow">
+              <h2 class="text-xl font-bold mb-2">Nimzo-Indian Defense</h2>
+              <p class="text-gray-700">1. d4 Nf6</p>
+              <p class="text-gray-700">2. c4 e6</p>
+              <p class="text-gray-700">3. Nc3 Bb4</p>
+            </li>
+          </ul>
+
+        </section>     
+        <div class="mt-12 sm:mt-16">
+            <svg class="w-auto h-4 mx-auto text-gray-300" viewBox="0 0 172 16" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 11 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 46 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 81 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 116 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 151 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 18 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 53 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 88 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 123 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 158 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 25 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 60 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 95 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 130 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 165 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 32 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 67 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 102 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 137 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 172 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 39 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 74 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 109 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 144 1)" />
+            </svg>
+        </div> 
+        <div class="container mx-auto p-4 py-10 bg-white sm:py-16 lg:py-24">
+            <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl text-center">Chess Terms</h2>
+        
+            <div class="mb-8">
+              <h2 class="text-2xl font-bold mb-2">Checkmate</h2>
+              <p class="text-gray-700">Checkmate is the condition in chess when a player's king is in a position to be captured (in "check") and there is no legal move to remove the threat. It is the ultimate goal of the game.</p>
+            </div>
+        
+            <div class="mb-8">
+              <h2 class="text-2xl font-bold mb-2">Stalemate</h2>
+              <p class="text-gray-700">Stalemate is a situation where the player whose turn it is to move has no legal moves but is not in check. In this case, the game ends in a draw, and neither player wins.</p>
+            </div>
+        
+            <div class="mb-8">
+              <h2 class="text-2xl font-bold mb-2">Promotion</h2>
+              <p class="text-gray-700">Promotion occurs when a pawn reaches the opposite end of the chessboard, also known as the eighth rank. The pawn can be promoted to any other piece of the player's choice, except another king.</p>
+            </div>
+        
+            <div class="mb-8">
+              <h2 class="text-2xl font-bold mb-2">Fork</h2>
+              <p class="text-gray-700">A fork is a tactic where a single piece attacks two or more opponent's pieces simultaneously. The attacking piece puts pressure on the opponent, forcing them to make a difficult choice.</p>
+            </div>
+        
+            <div>
+              <h2 class="text-2xl font-bold mb-2">Pin</h2>
+              <p class="text-gray-700">A pin is a situation where a piece is under attack and cannot move without exposing a more valuable piece behind it to capture. The pinned piece is temporarily immobilized.</p>
+            </div>
+          </div>  
+
+          <div class="mt-12 sm:mt-16">
+            <svg class="w-auto h-4 mx-auto text-gray-300" viewBox="0 0 172 16" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 11 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 46 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 81 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 116 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 151 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 18 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 53 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 88 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 123 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 158 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 25 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 60 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 95 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 130 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 165 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 32 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 67 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 102 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 137 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 172 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 39 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 74 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 109 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 144 1)" />
+            </svg>
+        </div>
+
+          <div class="container mx-auto p-4 py-10 bg-white sm:py-16 lg:py-24">
+            <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl text-center">Chess Tips and Tricks</h2>
+          
+            <div class="mb-8">
+              <h2 class="text-2xl font-bold mb-2">Control the Center</h2>
+              <p class="text-gray-700">Try to place your pieces in the central squares of the board (e4, e5, d4, d5) to exert influence and create more options for your moves.</p>
+            </div>
+          
+            <div class="mb-8">
+              <h2 class="text-2xl font-bold mb-2">Develop Your Pieces</h2>
+              <p class="text-gray-700">Move your knights and bishops out early in the game to control more squares and prepare for castling.</p>
+            </div>
+          
+            <div class="mb-8">
+              <h2 class="text-2xl font-bold mb-2">Protect Your King</h2>
+              <p class="text-gray-700">Castle early to safeguard your king and connect your rooks. It improves the king's safety and activates the rook.</p>
+            </div>
+          
+            <div class="mb-8">
+              <h2 class="text-2xl font-bold mb-2">Think Ahead</h2>
+              <p class="text-gray-700">Anticipate your opponent's moves and plan your own strategy. Consider possible threats and opportunities in each move.</p>
+            </div>
+          
+            <div class="mb-8">
+              <h2 class="text-2xl font-bold mb-2">Take Your Time</h2>
+              <p class="text-gray-700">Don't rush your moves. Analyze the position, evaluate different options, and choose the best move based on the current situation.</p>
+            </div>
+          
+            <div class="mb-8">
+              <h2 class="text-2xl font-bold mb-2">Use Tactics</h2>
+              <p class="text-gray-700">Learn basic tactics like forks, pins, skewers, and discovered attacks. Look for opportunities to execute these tactical maneuvers.</p>
+            </div>
+          
+            <div class="mb-8">
+              <h2 class="text-2xl font-bold mb-2">Trade Wisely</h2>
+              <p class="text-gray-700">Evaluate the value of the pieces being exchanged. Consider if a trade benefits your position or weakens your opponent's.</p>
+            </div>
+          
+            <div class="mb-8">
+              <h2 class="text-2xl font-bold mb-2">Centralize Your Pieces</h2>
+              <p class="text-gray-700">Aim to have your pieces centralized, where they have maximum influence and are ready for coordinated attacks or defense.</p>
+            </div>
+          
+            <div class="mb-8">
+              <h2 class="text-2xl font-bold mb-2">Control Open Files</h2>
+              <p class="text-gray-700">Place your rooks on open files (columns without pawns) to control them and apply pressure on your opponent's position.</p>
+            </div>
+          
+            <div>
+              <h2 class="text-2xl font-bold mb-2">Never Give Up</h2>
+              <p class="text-gray-700">Even if you're in a difficult position, keep fighting and look for counterplay. A single blunder from your opponent can turn the game around.</p>
+            </div>
+          </div>
+          <div class="mt-12 sm:mt-16">
+            <svg class="w-auto h-4 mx-auto text-gray-300" viewBox="0 0 172 16" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 11 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 46 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 81 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 116 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 151 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 18 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 53 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 88 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 123 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 158 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 25 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 60 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 95 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 130 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 165 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 32 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 67 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 102 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 137 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 172 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 39 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 74 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 109 1)" />
+                <line y1="-0.5" x2="18.0278" y2="-0.5" transform="matrix(-0.5547 0.83205 0.83205 0.5547 144 1)" />
+            </svg>
+        </div>
+        <div class="container mx-auto p-4 py-10 bg-white sm:py-16 lg:py-24">
+            <h1 class="text-3xl font-bold mb-4 text-center ">Congratulations!</h1>
+        
+            <div class="bg-white p-8 rounded-lg shadow">
+              <p class="text-2xl text-center text-gray-800">You've reached the end of the chess guide.</p>
+              <p class="text-lg text-center text-gray-700 mt-4">Congratulations on completing the course and expanding your knowledge of chess!</p>
+              <p class="text-lg text-center text-gray-700 mt-4">Keep practicing, exploring different strategies, and enjoy playing the game.</p>
+            </div>
+          </div>
+          
+    </div>
+</section>
+{% endblock content %}

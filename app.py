@@ -1,15 +1,35 @@
 from hack import app, create_db, db
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, request
 from flask_login import current_user, login_user, logout_user, login_required
 from hack.forms import LoginForm, RegForm
 from hack.models import User
+from chess_engine import *
 from werkzeug.security import generate_password_hash, check_password_hash
 
 create_db(app)
 
 @app.route('/')
-def home():
-    return render_template('index.html')
+def index():
+    return render_template("index.html")
+
+@app.route('/move/<int:depth>/<path:fen>/')
+def get_move(depth, fen):
+    print(depth)
+    print("Calculating...")
+    engine = Engine(fen)
+    move = engine.iterative_deepening(depth - 1)
+    print("Move found!", move)
+    print()
+    return move
+
+@app.route('/learn')
+def learn():
+    return render_template('learn.html')
+
+@app.route('/play')
+@login_required
+def play():
+    return render_template('play.html', host=request.host)
 
 @app.route('/reg', methods=['GET', 'POST'])
 def reg():
@@ -30,6 +50,11 @@ def reg():
             return redirect('/')
     return render_template('reg.html', form=form, mess=mess)
 
+@app.route('/forum')
+@login_required
+def forum():
+    return
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -43,7 +68,7 @@ def login():
         else:
             if check_password_hash(user.password, password):
                 login_user(user, remember=True)
-                return redirect(url_for('home'))
+                return redirect(url_for('index'))
             else:
                 mess = 'Incorrect password.'
     return render_template('login.html', mess=mess, form=form)
