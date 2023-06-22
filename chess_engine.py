@@ -1,8 +1,6 @@
 import chess
 import random
-import signal
 import time
-import cProfile
 
 class Engine:
 
